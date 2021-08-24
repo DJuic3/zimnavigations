@@ -72,14 +72,14 @@ class PaymentDetailsWidget extends StatelessWidget {
                   hasDivider: (_booking.taxes.length - 1) == index);
             }),
           ),
-          BookingRowWidget(
-            description: "Tax Amount".tr,
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Ui.getPrice(_booking.getTaxesValue(), style: Get.textTheme.subtitle2),
-            ),
-            hasDivider: false,
-          ),
+          // BookingRowWidget(
+          //   description: "Tax Amount".tr,
+          //   child: Align(
+          //     alignment: Alignment.centerRight,
+          //     child: Ui.getPrice(_booking.getTaxesValue(), style: Get.textTheme.subtitle2),
+          //   ),
+          //   hasDivider: false,
+          // ),
           BookingRowWidget(
               description: "Subtotal".tr,
               child: Align(

@@ -32,7 +32,7 @@ class Routes {
   static const E_PROVIDER_E_SERVICES = '/e_provider/e_services';
   static const BOOKING = '/booking';
   static const PAYPAL = '/paypal';
-  static const RAZORPAY = '/razorpay';
+  // static const RAZORPAY = '/razorpay';
   static const STRIPE = '/stripe';
   static const CASH = '/cash';
   static const CUSTOM_PAGES = '/custom_pages';

@@ -75,7 +75,7 @@ class CategoryView extends GetView<CategoryController> {
                                 errorWidget: (context, url, error) => Icon(Icons.error_outline),
                               )),
                       ),
-                      AddressWidget().paddingOnly(bottom: 75),
+                      // AddressWidget().paddingOnly(bottom: 75),
                     ],
                   )).marginOnly(bottom: 42),
             ),

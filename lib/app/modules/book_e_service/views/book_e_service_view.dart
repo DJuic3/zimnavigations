@@ -44,27 +44,6 @@ class BookEServiceView extends GetView<BookEServiceController> {
                       SizedBox(width: 20),
                       Expanded(child: Text("Your Addresses".tr, style: Get.textTheme.bodyText1)),
                       SizedBox(width: 4),
-                      MaterialButton(
-                        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
-                        onPressed: () {
-                          Get.toNamed(Routes.SETTINGS_ADDRESS_PICKER);
-                        },
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                        color: Get.theme.accentColor.withOpacity(0.1),
-                        child: Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          spacing: 6,
-                          children: [
-                            Text("New".tr, style: Get.textTheme.subtitle1),
-                            Icon(
-                              Icons.my_location,
-                              color: Get.theme.accentColor,
-                              size: 20,
-                            ),
-                          ],
-                        ),
-                        elevation: 0,
-                      ),
                       SizedBox(width: 20),
                     ],
                   ),
@@ -113,25 +92,25 @@ class BookEServiceView extends GetView<BookEServiceController> {
               labelText: "Hint".tr,
               iconData: Icons.description_outlined,
             ),
-            Obx(() {
-              return TextFieldWidget(
-                onChanged: (input) => controller.booking.value.coupon.code = input,
-                hintText: "COUPON01".tr,
-                labelText: "Coupon Code".tr,
-                errorText: controller.getValidationMessage(),
-                iconData: Icons.confirmation_number_outlined,
-                style: Get.textTheme.bodyText2.merge(TextStyle(color: controller.getValidationMessage() != null ? Colors.redAccent : Colors.green)),
-                suffixIcon: MaterialButton(
-                  onPressed: () {
-                    controller.validateCoupon();
-                  },
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                  color: Get.theme.focusColor.withOpacity(0.1),
-                  child: Text("Apply".tr, style: Get.textTheme.bodyText1),
-                  elevation: 0,
-                ).marginSymmetric(vertical: 4),
-              );
-            }),
+            // Obx(() {
+            //   return TextFieldWidget(
+            //     onChanged: (input) => controller.booking.value.coupon.code = input,
+            //     hintText: "COUPON01".tr,
+            //     labelText: "Coupon Code".tr,
+            //     errorText: controller.getValidationMessage(),
+            //     iconData: Icons.confirmation_number_outlined,
+            //     style: Get.textTheme.bodyText2.merge(TextStyle(color: controller.getValidationMessage() != null ? Colors.redAccent : Colors.green)),
+            //     suffixIcon: MaterialButton(
+            //       onPressed: () {
+            //         controller.validateCoupon();
+            //       },
+            //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            //       color: Get.theme.focusColor.withOpacity(0.1),
+            //       child: Text("Apply".tr, style: Get.textTheme.bodyText1),
+            //       elevation: 0,
+            //     ).marginSymmetric(vertical: 4),
+            //   );
+            // }),
             SizedBox(height: 20),
             Obx(() {
               return Container(

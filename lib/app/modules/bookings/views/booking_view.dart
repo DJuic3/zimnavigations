@@ -31,7 +31,7 @@ class BookingView extends GetView<BookingController> {
             slivers: <Widget>[
               SliverAppBar(
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                expandedHeight: 370,
+                expandedHeight: 150,
                 elevation: 0,
                 // pinned: true,
                 floating: true,
@@ -43,29 +43,11 @@ class BookingView extends GetView<BookingController> {
                   onPressed: () => {Get.back()},
                 ),
                 bottom: buildBookingTitleBarWidget(controller.booking),
-                flexibleSpace: FlexibleSpaceBar(
-                  collapseMode: CollapseMode.parallax,
-                  background: Obx(() {
-                    return GoogleMap(
-                      compassEnabled: false,
-                      scrollGesturesEnabled: false,
-                      tiltGesturesEnabled: false,
-                      myLocationEnabled: false,
-                      myLocationButtonEnabled: false,
-                      zoomControlsEnabled: false,
-                      zoomGesturesEnabled: false,
-                      mapToolbarEnabled: false,
-                      rotateGesturesEnabled: false,
-                      liteModeEnabled: true,
-                      mapType: MapType.normal,
-                      initialCameraPosition: CameraPosition(target: LatLng(0, 0)),
-                      markers: Set.from(controller.allMarkers),
-                      onMapCreated: (GoogleMapController _con) {
-                        controller.mapController = _con;
-                      },
-                    );
-                  }),
-                ).marginOnly(bottom: 60),
+                // flexibleSpace: FlexibleSpaceBar(
+                //   collapseMode: CollapseMode.parallax,
+                //
+                // )
+                    // .marginOnly(bottom: 60),
               ),
               SliverToBoxAdapter(
                 child: Column(
@@ -409,7 +391,7 @@ class BookingView extends GetView<BookingController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Contact Provider".tr, style: Get.textTheme.subtitle2),
+                Text("Contact Admin".tr, style: Get.textTheme.subtitle2),
                 Text(_booking.eProvider?.phoneNumber ?? '', style: Get.textTheme.caption),
               ],
             ),

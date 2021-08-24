@@ -92,29 +92,29 @@ class ProfileView extends GetView<ProfileController> {
                 labelText: "Email".tr,
                 iconData: Icons.alternate_email,
               ),
-              TextFieldWidget(
-                keyboardType: TextInputType.phone,
-                onSaved: (input) {
-                  if (input.startsWith("00")) {
-                    input = "+" + input.substring(2);
-                  }
-                  return controller.user.value.phoneNumber = input;
-                },
-                validator: (input) => !input.startsWith('+') && !input.startsWith('00') ? "Phone number must start with country code!".tr : null,
-                initialValue: controller.user.value.phoneNumber,
-                hintText: "+1 223 665 7896".tr,
-                labelText: "Phone number".tr,
-                iconData: Icons.phone_android_outlined,
-                suffix: controller.user.value.verifiedPhone
-                    ? Text(
-                        "Verified".tr,
-                        style: Get.textTheme.caption.merge(TextStyle(color: Colors.green)),
-                      )
-                    : Text(
-                        "Not Verified".tr,
-                        style: Get.textTheme.caption.merge(TextStyle(color: Colors.redAccent)),
-                      ),
-              ),
+              // TextFieldWidget(
+              //   keyboardType: TextInputType.phone,
+              //   onSaved: (input) {
+              //     if (input.startsWith("00")) {
+              //       input = "+" + input.substring(2);
+              //     }
+              //     return controller.user.value.phoneNumber = input;
+              //   },
+              //   validator: (input) => !input.startsWith('+') && !input.startsWith('00') ? "Phone number must start with country code!".tr : null,
+              //   initialValue: controller.user.value.phoneNumber,
+              //   hintText: "+1 223 665 7896".tr,
+              //   labelText: "Phone number".tr,
+              //   iconData: Icons.phone_android_outlined,
+              //   suffix: controller.user.value.verifiedPhone
+              //       ? Text(
+              //           "Verified".tr,
+              //           style: Get.textTheme.caption.merge(TextStyle(color: Colors.green)),
+              //         )
+              //       : Text(
+              //           "Not Verified".tr,
+              //           style: Get.textTheme.caption.merge(TextStyle(color: Colors.redAccent)),
+              //         ),
+              // ),
               TextFieldWidget(
                 onSaved: (input) => controller.user.value.address = input,
                 validator: (input) => input.length < 3 ? "Should be more than 3 letters".tr : null,
@@ -123,13 +123,13 @@ class ProfileView extends GetView<ProfileController> {
                 labelText: "Address".tr,
                 iconData: Icons.map_outlined,
               ),
-              TextFieldWidget(
-                onSaved: (input) => controller.user.value.bio = input,
-                initialValue: controller.user.value.bio,
-                hintText: "Your short biography here".tr,
-                labelText: "Short Biography".tr,
-                iconData: Icons.article_outlined,
-              ),
+              // TextFieldWidget(
+              //   onSaved: (input) => controller.user.value.bio = input,
+              //   initialValue: controller.user.value.bio,
+              //   hintText: "Your short biography here".tr,
+              //   labelText: "Short Biography".tr,
+              //   iconData: Icons.article_outlined,
+              // ),
               Text("Change password".tr, style: Get.textTheme.headline5).paddingOnly(top: 25, bottom: 0, right: 22, left: 22),
               Text("Fill your old password and type new password and confirm it".tr, style: Get.textTheme.caption).paddingSymmetric(horizontal: 22, vertical: 5),
               Obx(() {

@@ -42,7 +42,7 @@ class CategoriesView extends GetView<CategoriesController> {
                 child: Row(children: [
                   Expanded(
                     child: Text(
-                      "Categories of services".tr,
+                      "Product Categories".tr,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.headline5,

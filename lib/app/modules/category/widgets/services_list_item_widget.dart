@@ -113,29 +113,6 @@ class ServicesListItemWidget extends StatelessWidget {
                         crossAxisAlignment: WrapCrossAlignment.center,
                         spacing: 5,
                         children: [
-                          SizedBox(
-                            height: 32,
-                            child: Chip(
-                              padding: EdgeInsets.all(0),
-                              label: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Icon(
-                                    Icons.star,
-                                    color: Get.theme.accentColor,
-                                    size: 18,
-                                  ),
-                                  Text(_service.rate.toString(), style: Get.textTheme.bodyText2.merge(TextStyle(color: Get.theme.accentColor, height: 1.4))),
-                                ],
-                              ),
-                              backgroundColor: Get.theme.accentColor.withOpacity(0.15),
-                              shape: StadiumBorder(),
-                            ),
-                          ),
-                          Text(
-                            "From (%s)".trArgs([_service.totalReviews.toString()]),
-                            style: Get.textTheme.bodyText1,
-                          ),
                         ],
                       ),
                       Ui.getPrice(_service.price, style: Get.textTheme.headline6),
@@ -152,26 +129,6 @@ class ServicesListItemWidget extends StatelessWidget {
                       Flexible(
                         child: Text(
                           _service.eProvider.name,
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          softWrap: false,
-                          style: Get.textTheme.bodyText1,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.place_outlined,
-                        size: 18,
-                        color: Get.theme.focusColor,
-                      ),
-                      SizedBox(width: 5),
-                      Flexible(
-                        child: Text(
-                          // TODO eProvider address
-                          _service.eProvider.firstAddress,
                           maxLines: 1,
                           overflow: TextOverflow.fade,
                           softWrap: false,

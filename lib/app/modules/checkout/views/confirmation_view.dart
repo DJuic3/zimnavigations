@@ -11,7 +11,7 @@ class ConfirmationView extends GetView<CheckoutController> {
   Widget build(BuildContext context) {
     final arguments = Get.arguments ?? {};
     return Scaffold(
-      drawer: MainDrawerWidget(),
+      // drawer: MainDrawerWidget(),
       appBar: AppBar(
         title: Text(
           arguments['title'] ?? "Confirmation".tr,
@@ -20,10 +20,10 @@ class ConfirmationView extends GetView<CheckoutController> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
-        leading: new IconButton(
-          icon: new Icon(Icons.sort, color: Get.theme.hintColor),
-          onPressed: () => {Scaffold.of(context).openDrawer()},
-        ),
+        // leading: new IconButton(
+        //   icon: new Icon(Icons.sort, color: Get.theme.hintColor),
+        //   onPressed: () => {Scaffold.of(context).openDrawer()},
+        // ),
         elevation: 0,
       ),
       body: Container(

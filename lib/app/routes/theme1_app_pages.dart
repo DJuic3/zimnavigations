@@ -18,7 +18,7 @@ import '../modules/checkout/views/cash_view.dart';
 import '../modules/checkout/views/checkout_view.dart';
 import '../modules/checkout/views/confirmation_view.dart';
 import '../modules/checkout/views/paypal_view.dart';
-import '../modules/checkout/views/razorpay_view.dart';
+// import '../modules/checkout/views/razorpay_view.dart';
 import '../modules/checkout/views/stripe_view.dart';
 import '../modules/custom_pages/bindings/custom_pages_binding.dart';
 import '../modules/custom_pages/views/custom_pages_view.dart';
@@ -83,7 +83,7 @@ class Theme1AppPages {
     GetPage(name: Routes.E_PROVIDER_E_SERVICES, page: () => EProviderEServicesView(), binding: EProviderBinding()),
     GetPage(name: Routes.BOOKING, page: () => BookingView(), binding: RootBinding(), middlewares: [AuthMiddleware()]),
     GetPage(name: Routes.PAYPAL, page: () => PayPalViewWidget(), binding: CheckoutBinding(), middlewares: [AuthMiddleware()]),
-    GetPage(name: Routes.RAZORPAY, page: () => RazorPayViewWidget(), binding: CheckoutBinding(), middlewares: [AuthMiddleware()]),
+    // GetPage(name: Routes.RAZORPAY, page: () => RazorPayViewWidget(), binding: CheckoutBinding(), middlewares: [AuthMiddleware()]),
     GetPage(name: Routes.STRIPE, page: () => StripeViewWidget(), binding: CheckoutBinding(), middlewares: [AuthMiddleware()]),
     GetPage(name: Routes.CASH, page: () => CashViewWidget(), binding: CheckoutBinding(), middlewares: [AuthMiddleware()]),
     GetPage(name: Routes.CUSTOM_PAGES, page: () => CustomPagesView(), binding: CustomPagesBinding()),

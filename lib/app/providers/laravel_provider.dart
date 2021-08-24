@@ -914,17 +914,17 @@ class LaravelApiClient extends GetxService with ApiClient {
     return _uri.toString();
   }
 
-  String getRazorPayUrl(Booking _booking) {
-    if (!authService.isAuth) {
-      throw new Exception("You don't have the permission to access to this area!".tr + "[ getRazorPayUrl() ]");
-    }
-    var _queryParameters = {
-      'api_token': authService.apiToken,
-      'booking_id': _booking.id,
-    };
-    Uri _uri = getBaseUri("payments/razorpay/checkout").replace(queryParameters: _queryParameters);
-    return _uri.toString();
-  }
+  // String getRazorPayUrl(Booking _booking) {
+  //   if (!authService.isAuth) {
+  //     throw new Exception("You don't have the permission to access to this area!".tr + "[ getRazorPayUrl() ]");
+  //   }
+  //   var _queryParameters = {
+  //     'api_token': authService.apiToken,
+  //     'booking_id': _booking.id,
+  //   };
+  //   Uri _uri = getBaseUri("payments/razorpay/checkout").replace(queryParameters: _queryParameters);
+  //   return _uri.toString();
+  // }
 
   String getStripeUrl(Booking _booking) {
     if (!authService.isAuth) {

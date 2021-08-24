@@ -43,10 +43,10 @@ class Home2View extends GetView<HomeController> {
                 ),
                 centerTitle: true,
                 automaticallyImplyLeading: false,
-                leading: new IconButton(
-                  icon: new Icon(Icons.sort, color: Colors.black87),
-                  onPressed: () => {Scaffold.of(context).openDrawer()},
-                ),
+                // leading: new IconButton(
+                //   icon: new Icon(Icons.sort, color: Colors.black87),
+                //   onPressed: () => {Scaffold.of(context).openDrawer()},
+                // ),
                 actions: [NotificationsButtonWidget()],
                 bottom: HomeSearchBarWidget(),
                 flexibleSpace: FlexibleSpaceBar(
@@ -134,7 +134,7 @@ class Home2View extends GetView<HomeController> {
                       ),
                     ),
                     RecommendedCarouselWidget(),
-                    FeaturedCategoriesWidget(),
+                    //FeaturedCategoriesWidget(),
                   ],
                 ),
               ),

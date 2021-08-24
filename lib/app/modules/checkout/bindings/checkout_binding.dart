@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../controllers/cash_controller.dart';
 import '../controllers/checkout_controller.dart';
 import '../controllers/paypal_controller.dart';
-import '../controllers/razorpay_controller.dart';
+// import '../controllers/razorpay_controller.dart';
 import '../controllers/stripe_controller.dart';
 
 class CheckoutBinding extends Bindings {
@@ -15,9 +15,9 @@ class CheckoutBinding extends Bindings {
     Get.lazyPut<PayPalController>(
       () => PayPalController(),
     );
-    Get.lazyPut<RazorPayController>(
-      () => RazorPayController(),
-    );
+    // Get.lazyPut<RazorPayController>(
+    //   () => RazorPayController(),
+    //);
     Get.lazyPut<StripeController>(
       () => StripeController(),
     );

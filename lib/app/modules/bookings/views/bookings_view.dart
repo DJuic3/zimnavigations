@@ -37,10 +37,10 @@ class BookingsView extends GetView<BookingsController> {
                   ),
                   centerTitle: true,
                   automaticallyImplyLeading: false,
-                  leading: new IconButton(
-                    icon: new Icon(Icons.sort, color: Colors.black87),
-                    onPressed: () => {Scaffold.of(context).openDrawer()},
-                  ),
+                  // leading: new IconButton(
+                  //   icon: new Icon(Icons.sort, color: Colors.black87),
+                  //   onPressed: () => {Scaffold.of(context).openDrawer()},
+                  // ),
                   actions: [NotificationsButtonWidget()],
                   bottom: controller.bookingStatuses.isEmpty
                       ? TabBarLoadingWidget()

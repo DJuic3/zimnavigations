@@ -24,9 +24,9 @@ class PaymentRepository {
     return _laravelApiClient.getPayPalUrl(booking);
   }
 
-  String getRazorPayUrl(Booking booking) {
-    return _laravelApiClient.getRazorPayUrl(booking);
-  }
+  // String getRazorPayUrl(Booking booking) {
+  //   return _laravelApiClient.getRazorPayUrl(booking);
+  // }
 
   String getStripeUrl(Booking booking) {
     return _laravelApiClient.getStripeUrl(booking);
