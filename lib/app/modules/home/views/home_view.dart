@@ -44,7 +44,7 @@ class HomeView extends GetView<HomeController> {
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: Row(
                   children: [
-                    Expanded(child: Text("Categories".tr, style: Get.textTheme.headline5)),
+                    Expanded(child: Text("Companies".tr, style: Get.textTheme.headline5)),
                     MaterialButton(
                       onPressed: () {},
                       shape: StadiumBorder(),

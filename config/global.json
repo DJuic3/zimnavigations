@@ -1,5 +1,5 @@
 {
-  "laravel_base_url": "http://192.168.100.81/servicesweb/",
+  "laravel_base_url": "http://192.168.100.61/Project/",
   "api_path": "api/",
   "received": 1,
   "accepted": 10,

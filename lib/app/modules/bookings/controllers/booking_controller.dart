@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import '../../../../common/map.dart';
 import '../../../../common/ui.dart';
 import '../../../models/booking_model.dart';
@@ -152,7 +151,7 @@ class BookingController extends GetxController {
         })
         .toSet()
         .toList();
-    //Message _message = new Message(_employees, name: booking.value.eProvider.name);
-    //Get.toNamed(Routes.CHAT, arguments: _message);
+    // Message _message = new Message(_employees, name: booking.value.eProvider.name);
+    // Get.toNamed(Routes.CHAT, arguments: _message);
   }
 }

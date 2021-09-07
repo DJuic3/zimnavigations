@@ -10,10 +10,10 @@ class RootView extends GetView<RootController> {
   Widget build(BuildContext context) {
     return Obx(() {
       return Scaffold(
-        // drawer: Drawer(
-        //   child: MainDrawerWidget(),
-        //   elevation: 0,
-        // ),
+        drawer: Drawer(
+          child: MainDrawerWidget(),
+          elevation: 0,
+        ),
         body: controller.currentPage,
         bottomNavigationBar: CustomBottomNavigationBar(
           backgroundColor: context.theme.scaffoldBackgroundColor,

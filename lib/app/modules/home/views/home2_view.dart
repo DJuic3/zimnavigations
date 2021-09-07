@@ -43,10 +43,10 @@ class Home2View extends GetView<HomeController> {
                 ),
                 centerTitle: true,
                 automaticallyImplyLeading: false,
-                // leading: new IconButton(
-                //   icon: new Icon(Icons.sort, color: Colors.black87),
-                //   onPressed: () => {Scaffold.of(context).openDrawer()},
-                // ),
+                leading: new IconButton(
+                  icon: new Icon(Icons.sort, color: Colors.black87),
+                  onPressed: () => {Scaffold.of(context).openDrawer()},
+                ),
                 actions: [NotificationsButtonWidget()],
                 bottom: HomeSearchBarWidget(),
                 flexibleSpace: FlexibleSpaceBar(
@@ -101,7 +101,7 @@ class Home2View extends GetView<HomeController> {
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                       child: Row(
                         children: [
-                          Expanded(child: Text("Categories".tr, style: Get.textTheme.headline5)),
+                          Expanded(child: Text("Companies".tr, style: Get.textTheme.headline5)),
                           MaterialButton(
                             onPressed: () {
                               Get.toNamed(Routes.CATEGORIES);

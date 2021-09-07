@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "562043552134",
+    "project_id": "navigationsystem-9356d",
+    "storage_bucket": "navigationsystem-9356d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562043552134:android:97fa7a7f0612f045c1ec07",
+        "android_client_info": {
+          "package_name": "com.example.zimnavigation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562043552134-f0rhm8p59uqvv9in2iqq81496qf4b5i2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcLfuIJzyd7hV6Mj-Bv818StRkBUPGXrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562043552134-f0rhm8p59uqvv9in2iqq81496qf4b5i2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

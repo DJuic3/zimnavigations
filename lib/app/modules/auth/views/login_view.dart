@@ -64,7 +64,7 @@ class LoginView extends GetView<AuthController> {
                           ),
                           SizedBox(height: 5),
                           Text(
-                            "Wagwaan Gg!".tr,
+                            "Travel and Navigate".tr,
                             style: Get.textTheme.caption.merge(TextStyle(color: Get.theme.primaryColor)),
                             textAlign: TextAlign.center,
                           ),
@@ -81,7 +81,7 @@ class LoginView extends GetView<AuthController> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       child: Image.asset(
-                        'assets/icon/logo.jpg',
+                        'assets/icon/logo.png',
                         fit: BoxFit.cover,
                         width: 100,
                         height: 100,
@@ -99,7 +99,7 @@ class LoginView extends GetView<AuthController> {
                     children: [
                       TextFieldWidget(
                         labelText: "Email Address".tr,
-                        hintText: "johndoe@gmail.com".tr,
+                        hintText: "user@gmail.com".tr,
                         initialValue: controller.currentUser?.value?.email,
                         onSaved: (input) => controller.currentUser.value.email = input,
                         validator: (input) => !input.contains('@') ? "Should be a valid email".tr : null,

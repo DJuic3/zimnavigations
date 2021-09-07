@@ -32,7 +32,7 @@ class FilterBottomSheetWidget extends GetView<SearchController> {
                     return CircularLoadingWidget(height: 100);
                   }
                   return ExpansionTile(
-                    title: Text("Categories".tr, style: Get.textTheme.bodyText2),
+                    title: Text("Companies".tr, style: Get.textTheme.bodyText2),
                     children: List.generate(controller.categories.length, (index) {
                       var _category = controller.categories.elementAt(index);
                       return Obx(() {

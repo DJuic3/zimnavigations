@@ -42,7 +42,7 @@ class BookEServiceView extends GetView<BookEServiceController> {
                   Row(
                     children: [
                       SizedBox(width: 20),
-                      Expanded(child: Text("Your Addresses".tr, style: Get.textTheme.bodyText1)),
+                      Expanded(child: Text("Select Location".tr, style: Get.textTheme.bodyText1)),
                       SizedBox(width: 4),
                       SizedBox(width: 20),
                     ],

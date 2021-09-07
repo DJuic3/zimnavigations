@@ -20,15 +20,15 @@ class MapsUtil {
     final Marker marker = Marker(
         markerId: MarkerId(id),
         icon: BitmapDescriptor.fromBytes(markerIcon),
-//        onTap: () {
-//          //print(res.name);
-//        },
+       onTap: () {
+         //print(res.name);
+       },
         anchor: Offset(0.5, 0.5),
         infoWindow: InfoWindow(
             title: description,
-            //snippet: getDistance(res['distance'].toDouble(), setting.value.distanceUnit),
+            // snippet: getDistance(res['distance'].toDouble(), setting.value.distanceUnit),
             onTap: () {
-              //print(CustomTrace(StackTrace.current, message: 'Info Window'));
+              // print(CustomTrace(StackTrace.current, message: 'Info Window'));
             }),
         position: address.getLatLng());
 

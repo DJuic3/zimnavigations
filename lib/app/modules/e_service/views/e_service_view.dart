@@ -111,45 +111,45 @@ class EServiceView extends GetView<EServiceController> {
                           title: Text("Description".tr, style: Get.textTheme.subtitle2),
                           content: Ui.applyHtml(_eService.description, style: Get.textTheme.bodyText1),
                         ),
-                        // buildDuration(_eService),
-                        // buildOptions(),
-                        // buildServiceProvider(_eService),
-                        // EServiceTilWidget(
-                        //   title: Text("Reviews & Ratings".tr, style: Get.textTheme.subtitle2),
-                        //   content: Column(
-                        //     children: [
-                        //       Text(_eService.rate.toString(), style: Get.textTheme.headline1),
-                        //       Wrap(
-                        //         children: Ui.getStarsList(_eService.rate, size: 32),
-                        //       ),
-                        //       Text(
-                        //         "Reviews (%s)".trArgs([_eService.totalReviews.toString()]),
-                        //         style: Get.textTheme.caption,
-                        //       ).paddingOnly(top: 10),
-                        //       Divider(height: 35, thickness: 1.3),
-                        //       Obx(() {
-                        //         if (controller.reviews.isEmpty) {
-                        //           return CircularLoadingWidget(height: 100);
-                        //         }
-                        //         return ListView.separated(
-                        //           padding: EdgeInsets.all(0),
-                        //           itemBuilder: (context, index) {
-                        //             return ReviewItemWidget(review: controller.reviews.elementAt(index));
-                        //           },
-                        //           separatorBuilder: (context, index) {
-                        //             return Divider(height: 35, thickness: 1.3);
-                        //           },
-                        //           itemCount: controller.reviews.length,
-                        //           primary: false,
-                        //           shrinkWrap: true,
-                        //         );
-                        //       }),
-                        //     ],
-                        //   ),
-                        //   actions: [
-                        //     // TODO view all reviews
-                        //   ],
-                        // ),
+                        buildDuration(_eService),
+                        buildOptions(),
+                        buildServiceProvider(_eService),
+                        EServiceTilWidget(
+                          title: Text("Reviews & Ratings".tr, style: Get.textTheme.subtitle2),
+                          content: Column(
+                            children: [
+                              Text(_eService.rate.toString(), style: Get.textTheme.headline1),
+                              Wrap(
+                                children: Ui.getStarsList(_eService.rate, size: 32),
+                              ),
+                              Text(
+                                "Reviews (%s)".trArgs([_eService.totalReviews.toString()]),
+                                style: Get.textTheme.caption,
+                              ).paddingOnly(top: 10),
+                              Divider(height: 35, thickness: 1.3),
+                              Obx(() {
+                                if (controller.reviews.isEmpty) {
+                                  return CircularLoadingWidget(height: 100);
+                                }
+                                return ListView.separated(
+                                  padding: EdgeInsets.all(0),
+                                  itemBuilder: (context, index) {
+                                    return ReviewItemWidget(review: controller.reviews.elementAt(index));
+                                  },
+                                  separatorBuilder: (context, index) {
+                                    return Divider(height: 35, thickness: 1.3);
+                                  },
+                                  itemCount: controller.reviews.length,
+                                  primary: false,
+                                  shrinkWrap: true,
+                                );
+                              }),
+                            ],
+                          ),
+                          actions: [
+                            // TODO view all reviews
+                          ],
+                        ),
 
                       ]
                     ),
@@ -161,51 +161,51 @@ class EServiceView extends GetView<EServiceController> {
     });
   }
 
-  // Widget buildOptions() {
-  //   return Obx(() {
-  //     if (controller.optionGroups.isEmpty) {
-  //       return SizedBox(height: 0);
-  //     }
-  //     return EServiceTilWidget(
-  //       horizontalPadding: 0,
-  //       title: Text("Options".tr, style: Get.textTheme.subtitle2).paddingSymmetric(horizontal: 20),
-  //       content: ListView.separated(
-  //         padding: EdgeInsets.all(0),
-  //         itemBuilder: (context, index) {
-  //           return OptionGroupItemWidget(optionGroup: controller.optionGroups.elementAt(index));
-  //         },
-  //         separatorBuilder: (context, index) {
-  //           return SizedBox(height: 6);
-  //         },
-  //         itemCount: controller.optionGroups.length,
-  //         primary: false,
-  //         shrinkWrap: true,
-  //       ),
-  //     );
-  //   });
-  // }
+  Widget buildOptions() {
+    return Obx(() {
+      if (controller.optionGroups.isEmpty) {
+        return SizedBox(height: 0);
+      }
+      return EServiceTilWidget(
+        horizontalPadding: 0,
+        title: Text("Options".tr, style: Get.textTheme.subtitle2).paddingSymmetric(horizontal: 20),
+        content: ListView.separated(
+          padding: EdgeInsets.all(0),
+          itemBuilder: (context, index) {
+            return OptionGroupItemWidget(optionGroup: controller.optionGroups.elementAt(index));
+          },
+          separatorBuilder: (context, index) {
+            return SizedBox(height: 6);
+          },
+          itemCount: controller.optionGroups.length,
+          primary: false,
+          shrinkWrap: true,
+        ),
+      );
+    });
+  }
 
-  // Container buildDuration(EService _eService) {
-  //   return Container(
-  //     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-  //     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-  //     decoration: Ui.getBoxDecoration(),
-  //     child: Row(
-  //       children: [
-  //         Expanded(
-  //           child: Column(
-  //             children: [
-  //               Text("Duration".tr, style: Get.textTheme.subtitle2),
-  //               Text("This service can take up to ".tr, style: Get.textTheme.bodyText1),
-  //             ],
-  //             crossAxisAlignment: CrossAxisAlignment.start,
-  //           ),
-  //         ),
-  //         Text(_eService.duration, style: Get.textTheme.headline6),
-  //       ],
-  //     ),
-  //   );
-  // }
+  Container buildDuration(EService _eService) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      decoration: Ui.getBoxDecoration(),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              children: [
+                Text("Duration".tr, style: Get.textTheme.subtitle2),
+                Text("This service can take up to ".tr, style: Get.textTheme.bodyText1),
+              ],
+              crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+          ),
+          Text(_eService.duration, style: Get.textTheme.headline6),
+        ],
+      ),
+    );
+  }
 
   CarouselSlider buildCarouselSlider(EService _eService) {
     return CarouselSlider(
@@ -280,81 +280,81 @@ class EServiceView extends GetView<EServiceController> {
                   overflow: TextOverflow.fade,
                 ),
               ),
-              // if (_eService.eProvider == null)
-              //   Container(
-              //     child: Text("  .  .  .  ".tr,
-              //         maxLines: 1,
-              //         style: Get.textTheme.bodyText2.merge(
-              //           TextStyle(color: Colors.grey, height: 1.4, fontSize: 10),
-              //         ),
-              //         softWrap: false,
-              //         textAlign: TextAlign.center,
-              //         overflow: TextOverflow.fade),
-              //     decoration: BoxDecoration(
-              //       color: Colors.grey.withOpacity(0.2),
-              //       borderRadius: BorderRadius.circular(8),
-              //     ),
-              //     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              //     margin: EdgeInsets.symmetric(vertical: 3),
-              //   ),
-              // if (_eService.eProvider != null && _eService.eProvider.available)
-              //   Container(
-              //     child: Text("Available".tr,
-              //         maxLines: 1,
-              //         style: Get.textTheme.bodyText2.merge(
-              //           TextStyle(color: Colors.green, height: 1.4, fontSize: 10),
-              //         ),
-              //         softWrap: false,
-              //         textAlign: TextAlign.center,
-              //         overflow: TextOverflow.fade),
-              //     decoration: BoxDecoration(
-              //       color: Colors.green.withOpacity(0.2),
-              //       borderRadius: BorderRadius.circular(8),
-              //     ),
-              //     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              //     margin: EdgeInsets.symmetric(vertical: 3),
-              //   ),
-              // if (_eService.eProvider != null && !_eService.eProvider.available)
-              //   Container(
-              //     child: Text("Offline".tr,
-              //         maxLines: 1,
-              //         style: Get.textTheme.bodyText2.merge(
-              //           TextStyle(color: Colors.grey, height: 1.4, fontSize: 10),
-              //         ),
-              //         softWrap: false,
-              //         textAlign: TextAlign.center,
-              //         overflow: TextOverflow.fade),
-              //     decoration: BoxDecoration(
-              //       color: Colors.grey.withOpacity(0.2),
-              //       borderRadius: BorderRadius.circular(8),
-              //     ),
-              //     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              //     margin: EdgeInsets.symmetric(vertical: 3),
-              //   ),
+              if (_eService.eProvider == null)
+                Container(
+                  child: Text("  .  .  .  ".tr,
+                      maxLines: 1,
+                      style: Get.textTheme.bodyText2.merge(
+                        TextStyle(color: Colors.grey, height: 1.4, fontSize: 10),
+                      ),
+                      softWrap: false,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.fade),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  margin: EdgeInsets.symmetric(vertical: 3),
+                ),
+              if (_eService.eProvider != null && _eService.eProvider.available)
+                Container(
+                  child: Text("Available".tr,
+                      maxLines: 1,
+                      style: Get.textTheme.bodyText2.merge(
+                        TextStyle(color: Colors.green, height: 1.4, fontSize: 10),
+                      ),
+                      softWrap: false,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.fade),
+                  decoration: BoxDecoration(
+                    color: Colors.green.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  margin: EdgeInsets.symmetric(vertical: 3),
+                ),
+              if (_eService.eProvider != null && !_eService.eProvider.available)
+                Container(
+                  child: Text("Offline".tr,
+                      maxLines: 1,
+                      style: Get.textTheme.bodyText2.merge(
+                        TextStyle(color: Colors.grey, height: 1.4, fontSize: 10),
+                      ),
+                      softWrap: false,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.fade),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  margin: EdgeInsets.symmetric(vertical: 3),
+                ),
             ],
           ),
-          // Row(
-          //   children: [
-          //     Expanded(
-          //       child: Wrap(
-          //         crossAxisAlignment: WrapCrossAlignment.end,
-          //         children: List.from(Ui.getStarsList(_eService.rate))
-          //           ..addAll([
-          //             SizedBox(width: 5),
-          //             Text(
-          //               "Reviews (%s)".trArgs([_eService.totalReviews.toString()]),
-          //               style: Get.textTheme.caption,
-          //             ),
-          //           ]),
-          //       ),
-          //     ),
-          //     Ui.getPrice(
-          //       _eService.getPrice,
-          //       style: Get.textTheme.headline3.merge(TextStyle(color: Get.theme.accentColor)),
-          //       unit: _eService.getUnit,
-          //     ),
-          //   ],
-          // ),
+          Row(
+            children: [
+              Expanded(
+                child: Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.end,
+                  children: List.from(Ui.getStarsList(_eService.rate))
+                    ..addAll([
+                      SizedBox(width: 5),
+                      Text(
+                        "Reviews (%s)".trArgs([_eService.totalReviews.toString()]),
+                        style: Get.textTheme.caption,
+                      ),
+                    ]),
+                ),
+              ),
+              Ui.getPrice(
+                _eService.getPrice,
+                style: Get.textTheme.headline3.merge(TextStyle(color: Get.theme.accentColor)),
+                unit: _eService.getUnit,
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -396,30 +396,30 @@ class EServiceView extends GetView<EServiceController> {
     );
   }
 
-  // Widget buildServiceProvider(EService _eService) {
-  //   if (_eService?.eProvider?.hasData ?? false) {
-  //     return EServiceTilWidget(
-  //       title: Text("Service Provider".tr, style: Get.textTheme.subtitle2),
-  //       content: EProviderItemWidget(provider: _eService.eProvider),
-  //       actions: [
-  //         GestureDetector(
-  //           onTap: () {
-  //             Get.toNamed(Routes.E_PROVIDER, arguments: {'eProvider': _eService.eProvider, 'heroTag': 'e_service_details'});
-  //           },
-  //           child: Text("View More".tr, style: Get.textTheme.subtitle1),
-  //         ),
-  //       ],
-  //     );
-  //   } else {
-  //     return EServiceTilWidget(
-  //       title: Text("Service Provider".tr, style: Get.textTheme.subtitle2),
-  //       content: SizedBox(
-  //         height: 60,
-  //       ),
-  //       actions: [],
-  //     );
-  //   }
-  // }
+  Widget buildServiceProvider(EService _eService) {
+    if (_eService?.eProvider?.hasData ?? false) {
+      return EServiceTilWidget(
+        title: Text("Service Provider".tr, style: Get.textTheme.subtitle2),
+        content: EProviderItemWidget(provider: _eService.eProvider),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(Routes.E_PROVIDER, arguments: {'eProvider': _eService.eProvider, 'heroTag': 'e_service_details'});
+            },
+            child: Text("View More".tr, style: Get.textTheme.subtitle1),
+          ),
+        ],
+      );
+    } else {
+      return EServiceTilWidget(
+        title: Text("Service Provider".tr, style: Get.textTheme.subtitle2),
+        content: SizedBox(
+          height: 60,
+        ),
+        actions: [],
+      );
+    }
+  }
 
   Widget buildBottomWidget(EService _eService) {
     return Container(
@@ -484,7 +484,7 @@ class EServiceView extends GetView<EServiceController> {
                   height: 24,
                   alignment: Alignment.center,
                   child: Text(
-                    "Book This Service".tr,
+                    "Book Bus".tr,
                     textAlign: TextAlign.center,
                     style: Get.textTheme.headline6.merge(
                       TextStyle(color: Get.theme.primaryColor),

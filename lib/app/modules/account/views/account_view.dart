@@ -23,10 +23,10 @@ class AccountView extends GetView<AccountController> {
           centerTitle: true,
           backgroundColor: Get.theme.accentColor,
           automaticallyImplyLeading: false,
-          // leading: new IconButton(
-          //   icon: new Icon(Icons.sort, color: Get.theme.primaryColor),
-          //   onPressed: () => {Scaffold.of(context).openDrawer()},
-          // ),
+          leading: new IconButton(
+            icon: new Icon(Icons.sort, color: Get.theme.primaryColor),
+            onPressed: () => {Scaffold.of(context).openDrawer()},
+          ),
           elevation: 0,
           actions: [
             NotificationsButtonWidget(
@@ -112,20 +112,20 @@ class AccountView extends GetView<AccountController> {
                       Get.find<RootController>().changePage(1);
                     },
                   ),
-                  // AccountLinkWidget(
-                  //   icon: Icon(Icons.notifications_outlined, color: Get.theme.accentColor),
-                  //   text: Text("Notifications".tr),
-                  //   onTap: (e) {
-                  //     Get.toNamed(Routes.NOTIFICATIONS);
-                  //   },
-                  // ),
-                  // AccountLinkWidget(
-                  //   icon: Icon(Icons.chat_outlined, color: Get.theme.accentColor),
-                  //   text: Text("Messages".tr),
-                  //   onTap: (e) {
-                  //     Get.find<RootController>().changePage(2);
-                  //   },
-                  // ),
+                  AccountLinkWidget(
+                    icon: Icon(Icons.notifications_outlined, color: Get.theme.accentColor),
+                    text: Text("Notifications".tr),
+                    onTap: (e) {
+                      Get.toNamed(Routes.NOTIFICATIONS);
+                    },
+                  ),
+                  AccountLinkWidget(
+                    icon: Icon(Icons.chat_outlined, color: Get.theme.accentColor),
+                    text: Text("Messages".tr),
+                    onTap: (e) {
+                      Get.find<RootController>().changePage(2);
+                    },
+                  ),
                 ],
               ),
             ),

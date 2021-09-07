@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:zimnavigation/app/modules/profile/views/profile_view.dart';
 import '../../../models/custom_page_model.dart';
 import '../../../repositories/custom_page_repository.dart';
 import '../../../repositories/notification_repository.dart';

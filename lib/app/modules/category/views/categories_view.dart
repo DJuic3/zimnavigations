@@ -15,7 +15,7 @@ class CategoriesView extends GetView<CategoriesController> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Categories".tr,
+            "Companies".tr,
             style: Get.textTheme.headline6,
           ),
           centerTitle: true,

@@ -64,7 +64,7 @@ class RegisterView extends GetView<AuthController> {
                           ),
                           SizedBox(height: 5),
                           Text(
-                            "Welcome to the best service provider system!".tr,
+                            "Guide Me, Here for your Satisfaction.".tr,
                             style: Get.textTheme.caption.merge(TextStyle(color: Get.theme.primaryColor)),
                             textAlign: TextAlign.center,
                           ),
@@ -109,7 +109,7 @@ class RegisterView extends GetView<AuthController> {
                       ),
                       TextFieldWidget(
                         labelText: "Email Address".tr,
-                        hintText: "johndoe@gmail.com".tr,
+                        hintText: "user@gmail.com".tr,
                         initialValue: controller.currentUser?.value?.email,
                         onSaved: (input) => controller.currentUser.value.email = input,
                         validator: (input) => !input.contains('@') ? "Should be a valid email".tr : null,
@@ -119,7 +119,7 @@ class RegisterView extends GetView<AuthController> {
                       ),
                       TextFieldWidget(
                         labelText: "Phone Number".tr,
-                        hintText: "+1 223 665 7896".tr,
+                        hintText: "+263 770 000 000".tr,
                         initialValue: controller.currentUser?.value?.phoneNumber,
                         onSaved: (input) {
                           if (input.startsWith("00")) {

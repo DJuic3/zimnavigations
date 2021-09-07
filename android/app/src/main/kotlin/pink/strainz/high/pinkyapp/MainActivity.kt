@@ -1,4 +1,4 @@
-package pink.strainz.high.pinkyapp
+package com.example.zimnavigation
 
 import io.flutter.embedding.android.FlutterActivity
 

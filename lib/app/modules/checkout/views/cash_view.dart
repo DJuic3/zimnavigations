@@ -10,7 +10,7 @@ class CashViewWidget extends GetView<CashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: MainDrawerWidget(),
+      drawer: MainDrawerWidget(),
       appBar: AppBar(
         title: Obx(() {
           if (controller.isDone()) {

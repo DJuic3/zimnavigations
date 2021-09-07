@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pink.strainz.high.pinkyapp">
+    package="com.example.zimnavigation">
    <application
-        android:label="Pinky And The Strainz"
+        android:label="GuideMe zw"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

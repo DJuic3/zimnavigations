@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:zimnavigation/app/models/message_model.dart';
 
 import '../../../../common/ui.dart';
 import '../../../models/award_model.dart';
@@ -109,7 +110,7 @@ class EProviderController extends GetxController {
       e.avatar = eProvider.value.images[0];
       return e;
     }).toList();
-    // Message _message = new Message(_employees, name: eProvider.value.name);
-    // Get.toNamed(Routes.CHAT, arguments: _message);
+    Message _message = new Message(_employees, name: eProvider.value.name);
+    Get.toNamed(Routes.CHAT, arguments: _message);
   }
 }

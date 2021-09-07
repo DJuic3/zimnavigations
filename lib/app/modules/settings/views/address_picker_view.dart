@@ -49,7 +49,7 @@ class AddressPickerView extends StatelessWidget {
                     ),
                     TextFieldWidget(
                       labelText: "Full Address".tr,
-                      hintText: "123 Street, City 136, State, Country".tr,
+                      hintText: "123 Street, City 123, State, Country".tr,
                       initialValue: _address.address,
                       onChanged: (input) => _address.address = input,
                       iconData: Icons.place_outlined,
