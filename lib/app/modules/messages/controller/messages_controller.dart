@@ -80,7 +80,7 @@ class MessagesController extends GetxController {
     _chatRepository.addMessage(_message, _chat).then((value) {}).then((value) {
       _message.users.forEach((_user) {
         if (_user.id != _authService.user.value.id) {
-          //sendNotification(text, "New Message From".tr + " " + _authService.user.value.name, _user);
+          // sendNotification(text, "New Message From".tr + " " + _authService.user.value.name, _user);
         }
       });
     });

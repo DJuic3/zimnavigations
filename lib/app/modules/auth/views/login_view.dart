@@ -64,7 +64,7 @@ class LoginView extends GetView<AuthController> {
                           ),
                           SizedBox(height: 5),
                           Text(
-                            "Travel and Navigate".tr,
+                            "Welcome to the best service provider system!".tr,
                             style: Get.textTheme.caption.merge(TextStyle(color: Get.theme.primaryColor)),
                             textAlign: TextAlign.center,
                           ),
@@ -81,7 +81,7 @@ class LoginView extends GetView<AuthController> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       child: Image.asset(
-                        'assets/icon/logo.png',
+                        'assets/icon/icon.png',
                         fit: BoxFit.cover,
                         width: 100,
                         height: 100,
@@ -99,7 +99,7 @@ class LoginView extends GetView<AuthController> {
                     children: [
                       TextFieldWidget(
                         labelText: "Email Address".tr,
-                        hintText: "user@gmail.com".tr,
+                        hintText: "johndoe@gmail.com".tr,
                         initialValue: controller.currentUser?.value?.email,
                         onSaved: (input) => controller.currentUser.value.email = input,
                         validator: (input) => !input.contains('@') ? "Should be a valid email".tr : null,
@@ -124,6 +124,17 @@ class LoginView extends GetView<AuthController> {
                           ),
                         );
                       }),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              Get.toNamed(Routes.FORGOT_PASSWORD);
+                            },
+                            child: Text("Forgot Password?".tr),
+                          ),
+                        ],
+                      ).paddingSymmetric(horizontal: 20),
                       BlockButtonWidget(
                         onPressed: () {
                           controller.login();
@@ -134,6 +145,17 @@ class LoginView extends GetView<AuthController> {
                           style: Get.textTheme.headline6.merge(TextStyle(color: Get.theme.primaryColor)),
                         ),
                       ).paddingSymmetric(vertical: 10, horizontal: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              Get.toNamed(Routes.REGISTER);
+                            },
+                            child: Text("You don't have an account?".tr),
+                          ),
+                        ],
+                      ).paddingSymmetric(vertical: 20),
                     ],
                   );
                 }

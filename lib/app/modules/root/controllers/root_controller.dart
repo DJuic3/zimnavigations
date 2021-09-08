@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zimnavigation/app/modules/messages/controller/messages_controller.dart';
 import 'package:zimnavigation/app/modules/profile/views/profile_view.dart';
 import '../../../models/custom_page_model.dart';
 import '../../../repositories/custom_page_repository.dart';
@@ -15,6 +16,8 @@ import '../../bookings/controllers/bookings_controller.dart';
 import '../../bookings/views/bookings_view.dart';
 import '../../home/controllers/home_controller.dart';
 import '../../home/views/home2_view.dart';
+import '../../messages/views/messages_view.dart';
+
 
 class RootController extends GetxController {
   final currentIndex = 0.obs;
@@ -37,6 +40,7 @@ class RootController extends GetxController {
   List<Widget> pages = [
     Home2View(),
     BookingsView(),
+    MessagesView(),
     AccountView(),
   ];
 
@@ -88,6 +92,12 @@ class RootController extends GetxController {
           await Get.find<BookingsController>().refreshBookings();
           break;
         }
+      case 2:
+        {
+          await Get.find<MessagesController>().listenForMessages();
+          break;
+        }
+
     }
   }
 

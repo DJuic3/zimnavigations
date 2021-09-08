@@ -31,9 +31,9 @@ class AuthController extends GetxController {
       loginFormKey.currentState.save();
       loading.value = true;
       try {
-        //await Get.find<FireBaseMessagingService>().setDeviceToken();
+        await Get.find<FireBaseMessagingService>().setDeviceToken();
         currentUser.value = await _userRepository.login(currentUser.value);
-        //await _userRepository.signInWithEmailAndPassword(currentUser.value.email, currentUser.value.apiToken);
+        await _userRepository.signInWithEmailAndPassword(currentUser.value.email, currentUser.value.apiToken);
         await Get.find<RootController>().changePage(0);
       } catch (e) {
         Get.showSnackbar(Ui.ErrorSnackBar(message: e.toString()));
@@ -49,7 +49,7 @@ class AuthController extends GetxController {
       registerFormKey.currentState.save();
       loading.value = true;
       try {
-        //await _userRepository.sendCodeToPhone();
+        await _userRepository.sendCodeToPhone();
         loading.value = false;
         await Get.toNamed(Routes.PHONE_VERIFICATION);
       } catch (e) {
@@ -60,25 +60,25 @@ class AuthController extends GetxController {
     }
   }
 
-  // Future<void> verifyPhone() async {
-  //   try {
-  //     loading.value = true;
-  //     await _userRepository.verifyPhone(smsSent.value);
-  //     await Get.find<FireBaseMessagingService>().setDeviceToken();
-  //     currentUser.value = await _userRepository.register(currentUser.value);
-  //     await _userRepository.signUpWithEmailAndPassword(currentUser.value.email, currentUser.value.apiToken);
-  //     await Get.find<RootController>().changePage(0);
-  //   } catch (e) {
-  //     Get.back();
-  //     Get.showSnackbar(Ui.ErrorSnackBar(message: e.toString()));
-  //   } finally {
-  //     loading.value = false;
-  //   }
-  // }
-  //
-  // Future<void> resendOTPCode() async {
-  //   await _userRepository.sendCodeToPhone();
-  // }
+  Future<void> verifyPhone() async {
+    try {
+      loading.value = true;
+      await _userRepository.verifyPhone(smsSent.value);
+      await Get.find<FireBaseMessagingService>().setDeviceToken();
+      currentUser.value = await _userRepository.register(currentUser.value);
+      await _userRepository.signUpWithEmailAndPassword(currentUser.value.email, currentUser.value.apiToken);
+      await Get.find<RootController>().changePage(0);
+    } catch (e) {
+      Get.back();
+      Get.showSnackbar(Ui.ErrorSnackBar(message: e.toString()));
+    } finally {
+      loading.value = false;
+    }
+  }
+
+  Future<void> resendOTPCode() async {
+    await _userRepository.sendCodeToPhone();
+  }
 
   void sendResetLink() async {
     Get.focusScope.unfocus();

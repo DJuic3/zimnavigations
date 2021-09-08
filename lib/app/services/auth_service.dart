@@ -36,11 +36,11 @@ class AuthService extends GetxService {
     }
   }
 
-  // Future removeCurrentUser() async {
-  //   user.value = new User();
-  //   await _usersRepo.signOut();
-  //   await _box.remove('current_user');
-  // }
+  Future removeCurrentUser() async {
+    user.value = new User();
+    await _usersRepo.signOut();
+    await _box.remove('current_user');
+  }
 
   bool get isAuth => user.value.auth ?? false;
 

@@ -1,11 +1,9 @@
 /*
  * Copyright (c) 2020 .
  */
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../routes/app_routes.dart';
 import '../../services/auth_service.dart';
 import '../../services/settings_service.dart';
@@ -181,7 +179,7 @@ class MainDrawerWidget extends StatelessWidget {
             text: "Favorites",
             onTap: (e) async {
               await Get.offAndToNamed(Routes.FAVORITES);
-            },
+            }
           ),
           DrawerLinkWidget(
             icon: Icons.chat_outlined,
@@ -256,7 +254,7 @@ class MainDrawerWidget extends StatelessWidget {
                 icon: Icons.logout,
                 text: "Logout",
                 onTap: (e) async {
-                  //await Get.find<AuthService>().removeCurrentUser();
+                  // await Get.find<AuthService>().removeCurrentUser();
                   Get.back();
                   await Get.find<RootController>().changePage(0);
                 },

@@ -1,4 +1,5 @@
 import 'package:get/get.dart' show GetPage, Transition;
+import 'package:zimnavigation/app/modules/messages/views/chats_view.dart';
 
 import '../middlewares/auth_middleware.dart';
 import '../modules/auth/bindings/auth_binding.dart';
@@ -56,6 +57,7 @@ class Theme1AppPages {
 
   static final routes = [
     GetPage(name: Routes.ROOT, page: () => RootView(), binding: RootBinding()),
+    GetPage(name: Routes.CHAT, page: () => ChatsView(), binding: RootBinding(), middlewares: [AuthMiddleware()]),
     GetPage(name: Routes.RATING, page: () => RatingView(), binding: RatingBinding(), middlewares: [AuthMiddleware()]),
     GetPage(name: Routes.SETTINGS, page: () => SettingsView(), binding: SettingsBinding()),
     GetPage(name: Routes.SETTINGS_ADDRESSES, page: () => AddressesView(), binding: SettingsBinding(), middlewares: [AuthMiddleware()]),

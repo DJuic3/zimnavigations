@@ -80,9 +80,9 @@ class MessageItemWidget extends StatelessWidget {
                     height: 12,
                     child: Container(
                       decoration: BoxDecoration(
-//                        color: widget.message.user.userState == UserState.available
-//                            ? Colors.green
-//                            : widget.message.user.userState == UserState.away ? Colors.orange : Colors.red,
+                       // color: widget.message.user.userState == UserState.available
+                       //     ? Colors.green
+                       //     : widget.message.user.userState == UserState.away ? Colors.orange : Colors.red,
                         shape: BoxShape.circle,
                       ),
                     ),

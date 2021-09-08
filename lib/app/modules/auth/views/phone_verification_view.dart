@@ -121,7 +121,7 @@ class PhoneVerificationView extends GetView<AuthController> {
                         children: [
                           TextButton(
                             onPressed: () {
-                              //controller.resendOTPCode();
+                              controller.resendOTPCode();
                             },
                             child: Text("Resend the OTP Code Again".tr),
                           ),
