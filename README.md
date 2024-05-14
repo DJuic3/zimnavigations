@@ -1,6 +1,6 @@
-# pinkyapp
+# zimnavigation
 
-Pinky and the Strainz
+
 
 ## Getting Started
 
