@@ -1,12 +1,12 @@
 import 'parents/model.dart';
 
 class Coupon extends Model {
-  String id;
-  String code;
-  double discount;
-  String discountType;
+  late String id;
+  late String code;
+  late double discount;
+  late String discountType;
 
-  Coupon({this.id, this.code, this.discount, this.discountType});
+  Coupon({required this.id, required this.code, required this.discount, required this.discountType});
 
   Coupon.fromJson(Map<String, dynamic> json) {
     super.fromJson(json);

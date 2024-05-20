@@ -1,18 +1,18 @@
 import 'parents/model.dart';
 
 class CustomPage extends Model {
-  String id;
-  String title;
-  String content;
-  DateTime updatedAt;
+  late String id;
+  late String title;
+  late String content;
+  late DateTime updatedAt;
 
-  CustomPage({this.id, this.title, this.content, this.updatedAt});
+  CustomPage({required this.id, required this.title, required this.content, required this.updatedAt});
 
   CustomPage.fromJson(Map<String, dynamic> json) {
     super.fromJson(json);
-    title = transStringFromJson(json, 'title');
-    content = transStringFromJson(json, 'content');
-    updatedAt = dateFromJson(json, 'updated_at');
+    title = transStringFromJson(json, 'title', defaultLocale: '');
+    content = transStringFromJson(json, 'content', defaultLocale: '');
+    updatedAt = dateFromJson(json, 'updated_at', defaultValue:DateTime.now());
   }
 
   @override
@@ -25,7 +25,7 @@ class CustomPage extends Model {
   }
 
   @override
-  bool operator ==(Object other) =>
+  /*bool operator ==(Object other) =>
       identical(this, other) ||
       super == other &&
           other is CustomPage &&
@@ -33,7 +33,7 @@ class CustomPage extends Model {
           id == other.id &&
           title == other.title &&
           content == other.content &&
-          updatedAt == other.updatedAt;
+          updatedAt == other.updatedAt;*/
 
   @override
   int get hashCode => super.hashCode ^ id.hashCode ^ title.hashCode ^ content.hashCode ^ updatedAt.hashCode;

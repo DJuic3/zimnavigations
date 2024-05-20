@@ -5,22 +5,22 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'parents/model.dart';
 
 class Address extends Model {
-  String id;
-  String description;
-  String address;
-  double latitude;
-  double longitude;
-  bool isDefault;
-  String userId;
+  late String id;
+  late String description;
+  late String address;
+  late double latitude;
+  late double longitude;
+  late bool isDefault;
+  late String userId;
 
-  Address({this.id, this.description, this.address, this.latitude, this.longitude, this.isDefault, this.userId});
+  Address({required this.id, required this.description, required this.address, required this.latitude, required this.longitude, required this.isDefault, required this.userId});
 
   Address.fromJson(Map<String, dynamic> json) {
     super.fromJson(json);
     description = stringFromJson(json, 'description');
     address = stringFromJson(json, 'address');
-    latitude = doubleFromJson(json, 'latitude', defaultValue: null);
-    longitude = doubleFromJson(json, 'longitude', defaultValue: null);
+    latitude = doubleFromJson(json, 'latitude', defaultValue: 0.00);
+    longitude = doubleFromJson(json, 'longitude', defaultValue: 0.00);
     isDefault = boolFromJson(json, 'default');
     userId = stringFromJson(json, 'user_id');
   }

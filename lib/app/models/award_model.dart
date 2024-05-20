@@ -7,16 +7,16 @@ import 'dart:core';
 import 'parents/model.dart';
 
 class Award extends Model {
-  String id;
-  String title;
-  String description;
+  late String id;
+  late String title;
+  late String description;
 
-  Award({this.id, this.title, this.description});
+  Award({required this.id, required this.title, required this.description});
 
   Award.fromJson(Map<String, dynamic> json) {
     super.fromJson(json);
-    title = transStringFromJson(json, 'title');
-    description = transStringFromJson(json, 'description');
+    title = transStringFromJson(json, 'title', defaultLocale: '');
+    description = transStringFromJson(json, 'description', defaultLocale: '');
   }
 
   Map<String, dynamic> toJson() {

@@ -14,55 +14,55 @@ import 'tax_model.dart';
 import 'user_model.dart';
 
 class EProvider extends Model {
-  String id;
-  String name;
-  String description;
-  List<Media> images;
-  String phoneNumber;
-  String mobileNumber;
-  EProviderType type;
-  List<AvailabilityHour> availabilityHours;
-  double availabilityRange;
-  bool available;
-  bool featured;
-  List<Address> addresses;
-  List<Tax> taxes;
+  late String id;
+  late String name;
+  late String description;
+  late List<Media> images;
+  late String phoneNumber;
+  late String mobileNumber;
+  late EProviderType type;
+  late List<AvailabilityHour> availabilityHours;
+  late double availabilityRange;
+  late bool available;
+  late bool featured;
+  late List<Address> addresses;
+  late List<Tax> taxes;
 
-  List<User> employees;
-  double rate;
-  List<Review> reviews;
-  int totalReviews;
-  bool verified;
-  int bookingsInProgress;
+  late List<User> employees;
+  late double rate;
+  late List<Review> reviews;
+  late int totalReviews;
+  late bool verified;
+  late int bookingsInProgress;
 
   EProvider(
-      {this.id,
-      this.name,
-      this.description,
-      this.images,
-      this.phoneNumber,
-      this.mobileNumber,
-      this.type,
-      this.availabilityHours,
-      this.availabilityRange,
-      this.available,
-      this.featured,
-      this.addresses,
-      this.employees,
-      this.rate,
-      this.reviews,
-      this.totalReviews,
-      this.verified,
-      this.bookingsInProgress});
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.images,
+      required this.phoneNumber,
+      required this.mobileNumber,
+      required this.type,
+      required this.availabilityHours,
+      required this.availabilityRange,
+      required this.available,
+      required this.featured,
+      required this.addresses,
+      required this.employees,
+      required this.rate,
+      required this.reviews,
+      required this.totalReviews,
+      required this.verified,
+      required this.bookingsInProgress});
 
   EProvider.fromJson(Map<String, dynamic> json) {
     super.fromJson(json);
-    name = transStringFromJson(json, 'name');
-    description = transStringFromJson(json, 'description');
+    name = transStringFromJson(json, 'name', defaultLocale: '');
+    description = transStringFromJson(json, 'description', defaultLocale: '');
     images = mediaListFromJson(json, 'images');
     phoneNumber = stringFromJson(json, 'phone_number');
     mobileNumber = stringFromJson(json, 'mobile_number');
-    type = objectFromJson(json, 'e_provider_type', (v) => EProviderType.fromJson(v));
+    type = objectFromJson(json, 'e_provider_type', (v) => EProviderType.fromJson(v))!;
     availabilityHours = listFromJson(json, 'availability_hours', (v) => AvailabilityHour.fromJson(v));
     availabilityRange = doubleFromJson(json, 'availability_range');
     available = boolFromJson(json, 'available');
@@ -98,7 +98,7 @@ class EProvider extends Model {
 
   String get firstImageIcon => this.images?.first?.icon ?? '';
 
-  String get firstAddress {
+  String? get firstAddress {
     if (this.addresses.isNotEmpty) {
       return this.addresses.first?.address;
     }
@@ -114,7 +114,7 @@ class EProvider extends Model {
     Map<String, List<String>> result = {};
     this.availabilityHours.forEach((element) {
       if (result.containsKey(element.day)) {
-        result[element.day].add(element.startAt + ' - ' + element.endAt);
+        result[element.day]?.add(element.startAt + ' - ' + element.endAt);
       } else {
         result[element.day] = [element.startAt + ' - ' + element.endAt];
       }

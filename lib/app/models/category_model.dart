@@ -5,22 +5,22 @@ import 'media_model.dart';
 import 'parents/model.dart';
 
 class Category extends Model {
-  String id;
-  String name;
-  String description;
-  Color color;
-  Media image;
-  bool featured;
-  List<Category> subCategories;
-  List<EService> eServices;
+  late String id;
+  late String name;
+  late String description;
+  late Color color;
+  late Media image;
+  late bool featured;
+  late List<Category> subCategories;
+  late List<EService> eServices;
 
-  Category({this.id, this.name, this.description, this.color, this.image, this.featured, this.subCategories, this.eServices});
+  Category({required this.id, required this.name, required this.description, required this.color, required this.image, required this.featured, required this.subCategories, required this.eServices});
 
   Category.fromJson(Map<String, dynamic> json) {
     super.fromJson(json);
-    name = transStringFromJson(json, 'name');
+    name = transStringFromJson(json, 'name', defaultLocale: '');
     color = colorFromJson(json, 'color');
-    description = transStringFromJson(json, 'description');
+    description = transStringFromJson(json, 'description', defaultLocale: '');
     image = mediaFromJson(json, 'image');
     featured = boolFromJson(json, 'featured');
     eServices = listFromJsonArray(json, ['e_services', 'featured_e_services'], (v) => EService.fromJson(v));
@@ -37,7 +37,7 @@ class Category extends Model {
   }
 
   @override
-  bool operator ==(Object other) =>
+  /*bool operator ==(Object other) =>
       identical(this, other) ||
       super == other &&
           other is Category &&
@@ -49,7 +49,7 @@ class Category extends Model {
           image == other.image &&
           featured == other.featured &&
           subCategories == other.subCategories &&
-          eServices == other.eServices;
+          eServices == other.eServices;*/
 
   @override
   int get hashCode =>

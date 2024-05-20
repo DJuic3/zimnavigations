@@ -10,42 +10,42 @@ import 'tax_model.dart';
 import 'user_model.dart';
 
 class Booking extends Model {
-  String id;
-  String hint;
-  bool cancel;
-  double duration;
-  int quantity;
-  BookingStatus status;
-  User user;
-  EService eService;
-  EProvider eProvider;
-  List<Option> options;
-  List<Tax> taxes;
-  Address address;
-  Coupon coupon;
-  DateTime bookingAt;
-  DateTime startAt;
-  DateTime endsAt;
-  Payment payment;
+  late String id;
+  late String hint;
+  late bool cancel;
+  late double duration;
+  late int quantity;
+  late BookingStatus status;
+  late User user;
+  late EService eService;
+  late EProvider eProvider;
+  late List<Option> options;
+  late List<Tax> taxes;
+  late Address address;
+  late Coupon coupon;
+  late DateTime bookingAt;
+  late DateTime startAt;
+  late DateTime endsAt;
+  late Payment payment;
 
   Booking(
-      {this.id,
-      this.hint,
-      this.cancel,
-      this.duration,
-      this.quantity,
-      this.status,
-      this.user,
-      this.eService,
-      this.eProvider,
-      this.options,
-      this.taxes,
-      this.address,
-      this.coupon,
-      this.bookingAt,
-      this.startAt,
-      this.endsAt,
-      this.payment});
+      {required this.id,
+      required this.hint,
+      required this.cancel,
+      required this.duration,
+      required this.quantity,
+      required this.status,
+      required this.user,
+      required this.eService,
+      required this.eProvider,
+      required this.options,
+      required this.taxes,
+      required this.address,
+      required this.coupon,
+      required this.bookingAt,
+      required this.startAt,
+      required this.endsAt,
+      required this.payment});
 
   Booking.fromJson(Map<String, dynamic> json) {
     super.fromJson(json);
@@ -53,13 +53,13 @@ class Booking extends Model {
     cancel = boolFromJson(json, 'cancel');
     duration = doubleFromJson(json, 'duration');
     quantity = intFromJson(json, 'quantity');
-    status = objectFromJson(json, 'booking_status', (v) => BookingStatus.fromJson(v));
-    user = objectFromJson(json, 'user', (v) => User.fromJson(v));
-    eService = objectFromJson(json, 'e_service', (v) => EService.fromJson(v));
-    eProvider = objectFromJson(json, 'e_provider', (v) => EProvider.fromJson(v));
-    address = objectFromJson(json, 'address', (v) => Address.fromJson(v));
-    coupon = objectFromJson(json, 'coupon', (v) => Coupon.fromJson(v));
-    payment = objectFromJson(json, 'payment', (v) => Payment.fromJson(v));
+    status = objectFromJson(json, 'booking_status', (v) => BookingStatus.fromJson(v))!;
+    user = objectFromJson(json, 'user', (v) => User.fromJson(v))!;
+    eService = objectFromJson(json, 'e_service', (v) => EService.fromJson(v))!;
+    eProvider = objectFromJson(json, 'e_provider', (v) => EProvider.fromJson(v))!;
+    address = objectFromJson(json, 'address', (v) => Address.fromJson(v))!;
+    coupon = objectFromJson(json, 'coupon', (v) => Coupon.fromJson(v))!;
+    payment = objectFromJson(json, 'payment', (v) => Payment.fromJson(v))!;
     options = listFromJson(json, 'options', (v) => Option.fromJson(v));
     taxes = listFromJson(json, 'taxes', (v) => Tax.fromJson(v));
     bookingAt = dateFromJson(json, 'booking_at', defaultValue: null);
